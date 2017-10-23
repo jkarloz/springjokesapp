@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Chuck day joke</title>
 </head>
 <body>
 
-
-<table>
-<tr>
-<td>
-<h1>Chuck Norris</h1>
-</td>
-</tr>
-<tr>
-<td>
-<img th:src="@{/images/chuck_norris_walker.png}">
-</td>
-</tr>
-<tr>
-<td>
-<h3 th:text = "${joke}">Something was wrong!.. its not funny!</h3>
-</td>
-</tr>
-</table>
+	<table>
+		<tr>
+			<td>
+				<h1>Chuck Norris</h1>
+			</td>
+		</tr>
+		<tr>
+			<td><img th:src="@{/images/chuck_norris_walker.png}"></td>
+		</tr>
+		<tr>
+			<td>
+				<h3 th:text="${joke}">Something was wrong!.. its not funny!</h3>
+			</td>
+		</tr>
+	</table>
 
 </body>
 </html>

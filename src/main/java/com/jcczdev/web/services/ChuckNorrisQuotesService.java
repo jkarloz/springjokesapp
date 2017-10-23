@@ -1,8 +1,6 @@
 package com.jcczdev.web.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 
 /**
@@ -12,14 +10,15 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 @Service
 public class ChuckNorrisQuotesService implements QuoteService {
 
-	/* (non-Javadoc)
-	 * @see com.jcczdev.web.services.QuoteService#getQuotes()
-	 */
-	private ChuckNorrisQuotes chuckNorrisQuotes;
+// we make this property final to avoid being created each time getQuoted methods is called.
+	private final ChuckNorrisQuotes chuckNorrisQuotes;
+	
+	public ChuckNorrisQuotesService() {
+		this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+	}
 	
 	@Override
 	public String getQuote() {
-		chuckNorrisQuotes = new ChuckNorrisQuotes();
 		return chuckNorrisQuotes.getRandomQuote();
 	}
 

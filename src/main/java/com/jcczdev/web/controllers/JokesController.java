@@ -13,11 +13,15 @@ import com.jcczdev.web.services.ChuckNorrisQuotesService;
  */
 @Controller
 public class JokesController {
-	
-	@Autowired
+
 	private ChuckNorrisQuotesService chuckNorrisQuotesService;
-	
-	@RequestMapping(value = {"/", ""})
+		
+	@Autowired
+	public JokesController(ChuckNorrisQuotesService chuckNorrisQuotesService) {
+		this.chuckNorrisQuotesService = chuckNorrisQuotesService;
+	}
+
+	@RequestMapping({"/", ""})
 	public String getJoke(Model model) {
 		model.addAttribute("joke", chuckNorrisQuotesService.getQuote());
 		return "chucknorris";
