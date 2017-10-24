@@ -11,12 +11,13 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 public class ChuckNorrisQuotesService implements QuoteService {
 
 // we make this property final to avoid being created each time getQuoted methods is called.
-	private final ChuckNorrisQuotes chuckNorrisQuotes;
+	private final ChuckNorrisQuotes chuckNorrisQuotes;	
 	
-	public ChuckNorrisQuotesService() {
-		this.chuckNorrisQuotes = new ChuckNorrisQuotes();
-	}
-	
+	public ChuckNorrisQuotesService(ChuckNorrisQuotes chuckNorrisQuotes) {
+	super();
+	this.chuckNorrisQuotes = chuckNorrisQuotes;
+}
+
 	@Override
 	public String getQuote() {
 		return chuckNorrisQuotes.getRandomQuote();
